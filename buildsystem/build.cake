@@ -6,7 +6,7 @@
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
-var solutionName = "LibVLCSharp";
+var solutionName = "LibVLCSharp.Win32";
 var solutionFile = IsRunningOnWindows() ? $"{solutionName}.sln" : $"{solutionName}.Mac.sln";
 var solutionPath = $"../src/{solutionFile}";
 var libvlcsharpCsproj = "../src/libvlcsharp/libvlcsharp.csproj";
