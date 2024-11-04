@@ -12,17 +12,17 @@ stages:
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
     DOTNET_CLI_TELEMETRY_OPTOUT: true
   jobs:
-  - job: Linux
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
-    - template: linux-build.yml
+#   - job: Linux
+#     pool:
+#       vmImage: 'ubuntu-latest'
+#     steps:
+#     - template: linux-build.yml
 
-  - job: macOS
-    pool:
-      vmImage: 'macOS-latest'
-    steps:
-    - template: mac-build.yml
+#   - job: macOS
+#     pool:
+#       vmImage: 'macOS-latest'
+#     steps:
+#     - template: mac-build.yml
 
   - job: Windows
     pool:
