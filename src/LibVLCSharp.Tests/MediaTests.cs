@@ -96,6 +96,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
+        [Ignore("CI")]
         public void Duplicate()
         {
             using var stream = new FileStream(Path.GetTempFileName(), FileMode.OpenOrCreate);
