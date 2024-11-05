@@ -67,7 +67,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public async Task CreateRealMedia()
         {
             using (var media = new Media(_libVLC, RealStreamMediaPath, FromType.FromLocation))
@@ -84,7 +84,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public async Task CreateRealMediaFromUri()
         {
             using (var media = new Media(_libVLC, new Uri(RealStreamMediaPath, UriKind.Absolute)))
