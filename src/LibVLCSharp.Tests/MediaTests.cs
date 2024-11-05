@@ -101,7 +101,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public void Duplicate()
         {
             using var stream = new FileStream(Path.GetTempFileName(), FileMode.OpenOrCreate);
@@ -112,7 +112,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public void CreateMediaFromFileStream()
         {
             using var stream = new FileStream(RealMp3Path, FileMode.Open, FileAccess.Read, FileShare.Read);
