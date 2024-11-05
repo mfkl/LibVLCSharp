@@ -47,7 +47,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public void CreateMediaFromStream()
         {
             using var stream = new FileStream(Path.GetTempFileName(), FileMode.OpenOrCreate);
@@ -57,7 +57,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public void AddOption()
         {
             using var stream = new FileStream(Path.GetTempFileName(), FileMode.OpenOrCreate);
