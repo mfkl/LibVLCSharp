@@ -9,7 +9,6 @@ using NUnit.Framework;
 namespace LibVLCSharp.Tests
 {
     [TestFixture]
-    [Ignore("CI")]
     public class MediaTests : BaseSetup
     {
         [Test]
@@ -47,6 +46,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
+        [Ignore("CI")]
         public void CreateMediaFromStream()
         {
             using var stream = new FileStream(Path.GetTempFileName(), FileMode.OpenOrCreate);
@@ -108,6 +108,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
+        [Ignore("CI")]
         public void CreateMediaFromFileStream()
         {
             using var stream = new FileStream(RealMp3Path, FileMode.Open, FileAccess.Read, FileShare.Read);
@@ -156,6 +157,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
+        [Ignore("CI")]
         public async Task CreateMediaFromStreamMultiplePlay()
         {
             using var mp = new MediaPlayer(_libVLC);
@@ -174,6 +176,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
+        [Ignore("CI")]
         public async Task CreateMultipleMediaFromStreamPlay()
         {
             var libVLC1 = new LibVLC("--no-audio", "--no-video");
@@ -200,6 +203,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
+        [Ignore("CI")]
         public void ParseShouldThrowIfCancelledOperation()
         {
             using var media = new Media(_libVLC, RealMp3Path);
@@ -208,6 +212,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
+        [Ignore("CI")]
         public async Task ParseShouldTimeoutWith1MillisecondLimit()
         {
             using var media = new Media(_libVLC, RealMp3Path);
@@ -216,6 +221,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
+        [Ignore("CI")]
         public async Task ParseShouldSucceed()
         {
             using var media = new Media(_libVLC, RealMp3Path);
@@ -224,6 +230,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
+        [Ignore("CI")]
         public async Task ParseShouldFailIfNotMediaFile()
         {
             using var media = new Media(_libVLC, Path.GetTempFileName());
@@ -232,6 +239,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
+        [Ignore("CI")]
         public async Task ParseShouldBeSkippedIfLocalParseSpecifiedAndRemoteUrlProvided()
         {
             using var media = new Media(_libVLC, RealStreamMediaPath, FromType.FromLocation);
