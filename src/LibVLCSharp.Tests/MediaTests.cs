@@ -36,7 +36,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+   //     [Ignore("CI")]
         public void ReleaseMedia()
         {
             var media = new Media(_libVLC, Path.GetTempFileName());
