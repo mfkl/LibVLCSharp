@@ -3,23 +3,7 @@ steps:
   displayName: 'Use .NET Core SDK'
   inputs:
     packageType: sdk
-    version: 6.0.427
-
-- task: UseDotNet@2
-  displayName: 'Use .NET Core SDK'
-  inputs:
-    packageType: sdk
     version: 8.0.300
-
-- bash: |
-   dotnet workload install android
-   dotnet workload install ios
-   dotnet workload install macos
-   dotnet workload install tvos
-   dotnet workload install maui-android
-   dotnet workload install maui-ios
-  displayName: 'Install mobile workloads'
-  condition: ne( variables['Agent.OS'], 'Linux' )
 
 - task: DotNetCoreCLI@2
   displayName: 'Install Cake'
@@ -27,9 +11,3 @@ steps:
     command: custom
     custom: 'tool'
     arguments: 'install cake.tool --global'
-
-- bash: |
-   dotnet tool update --global uno.check --add-source https://api.nuget.org/v3/index.json
-   uno-check -v --ci --non-interactive --fix --skip xcode --skip gtk3 --skip vswin --skip vsmac --skip androidsdk --skip androidemulator
-  displayName: 'Run uno.check'
-  condition: ne( variables['Agent.OS'], 'Linux' )

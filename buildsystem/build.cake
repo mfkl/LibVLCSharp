@@ -48,14 +48,14 @@ Task("Restore-NuGet-Packages")
     .IsDependentOn("Clean")
     .Does(() =>
 {
-    DotNetRestore(solutionPath);
+    DotNetRestore(libvlcsharpCsproj);
 });
 
 Task("Build")
     .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
 {
-    Build(solutionPath);
+    Build(libvlcsharpCsproj);
 });
 
 // just for (faster) testing
