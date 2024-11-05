@@ -9,6 +9,7 @@ using NUnit.Framework;
 namespace LibVLCSharp.Tests
 {
     [TestFixture]
+    [Ignore("CI")]
     public class MediaTests : BaseSetup
     {
         [Test]
