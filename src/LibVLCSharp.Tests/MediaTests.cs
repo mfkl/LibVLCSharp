@@ -122,7 +122,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public void SetMetadata()
         {
             using var media = new Media(_libVLC, Path.GetTempFileName());
@@ -133,7 +133,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public async Task GetTracks()
         {
             using var media = new Media(_libVLC, RealMp3Path);
