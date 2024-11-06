@@ -219,7 +219,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
+        [Ignore("CI")]
         public async Task ParseShouldTimeoutWith1MillisecondLimit()
         {
             using var media = new Media(_libVLC, RealMp3Path);
