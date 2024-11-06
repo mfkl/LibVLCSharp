@@ -8,51 +8,21 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="LibVLCSharp.Avalonia.Sample.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="LibVLCSharp.Avalonia.Sample"
-		DataContextChanged="OnDataContextChanged">
-
-	<Design.DataContext>
-		<viewModels:MainWindowViewModel />
-	</Design.DataContext>
+        Title="LibVLCSharp.Avalonia.Sample">
 	
-    <!-- Set up so that the left splitter shifts and the right one resizes -->
-    <!-- Right Border, Splitter, VideoView, Splitter, Left Border-->
-    <Grid ColumnDefinitions="50, 7, 500, 7, *">
-        <Panel Grid.Column="0">
-            <ToggleButton x:Name="VisibilityButton" VerticalAlignment="Top" Click="VisibilityButton_OnClick" IsChecked="True">Is Visible</ToggleButton>
-        </Panel>
+	<Grid ColumnDefinitions="50, 7, 500, 7, *">
+		<Panel Grid.Column="0">
+			<ToggleButton x:Name="VisibilityButton" VerticalAlignment="Top" Click="VisibilityButton_OnClick" IsChecked="True">Is Visible</ToggleButton>
+		</Panel>
 
-        <GridSplitter Grid.Column="1" Background="Blue"></GridSplitter>
+		<GridSplitter Grid.Column="1" Background="Blue"></GridSplitter>
 
-        <Grid Grid.Column="2" RowDefinitions="*, *" Margin="10">
+		<v:VideoControl x:Name="VideoControl" Grid.Column="2"></v:VideoControl>
 
-            <!-- Modified -->
-			<vlc:VideoView
-                x:Name="ModifiedVideoView"
-                Grid.Row="0"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-				MediaPlayer="{Binding MediaPlayer}">
-                <Panel Margin="0 25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <TextBlock>Modified VideoView Content</TextBlock>
-                </Panel>
-            </vlc:VideoView>
+		<GridSplitter Grid.Column="3" Background="Red"></GridSplitter>
 
-            <vlc:VideoView
-                x:Name="VideoView"
-                Grid.Row="1"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch">
-                <Panel Margin="0 25" Background="Teal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <TextBlock>Current VideoView Content</TextBlock>
-                </Panel>
-            </vlc:VideoView>
-        </Grid>
-
-        <GridSplitter Grid.Column="3" Background="Red"></GridSplitter>
-
-        <Panel Grid.Column="4">
-            <ToggleButton x:Name="ContentButton" VerticalAlignment="Top" Click="ContentButton_OnClickButton_OnClick" IsChecked="True">Change Content</ToggleButton>
-        </Panel>
-    </Grid>
+		<Panel Grid.Column="4">
+			<ToggleButton x:Name="ContentButton" VerticalAlignment="Top" Click="ContentButton_OnClickButton_OnClick" IsChecked="True">Change Content</ToggleButton>
+		</Panel>
+	</Grid>
 </Window>

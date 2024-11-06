@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:LibVLCSharp.Avalonia.Sample.ViewModels"
+             xmlns:views="clr-namespace:LibVLCSharp.Avalonia;assembly=LibVLCSharp.Avalonia"
+             xmlns:modified="clr-namespace:LibVLCSharp.Avalonia;assembly=LibVLCSharp.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="LibVLCSharp.Avalonia.Sample.Views.VideoControl"
+             x:DataType="vm:MainWindowViewModel"
+             DataContextChanged="StyledElement_OnDataContextChanged">
+
+
+    <Grid  RowDefinitions="*, *" Margin="10">
+
+        <!-- Modified -->
+		<views:VideoView
+            x:Name="ModifiedVideoView"
+            Grid.Row="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            MediaPlayer="{Binding MediaPlayer1}">
+            <Panel Margin="0 25" Background="Orchid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock>Modified VideoView Content</TextBlock>
+            </Panel>
+        </views:VideoView>
+
+        <views:VideoView
+            x:Name="VideoView"
+            Grid.Row="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            MediaPlayer="{Binding MediaPlayer2}">
+            <Panel Margin="0 25" Background="Teal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock>Current VideoView Content</TextBlock>
+            </Panel>
+        </views:VideoView>
+    </Grid>
+</UserControl>
+

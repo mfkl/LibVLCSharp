@@ -1,4 +1,5 @@
 ﻿using System;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -15,35 +16,23 @@ namespace LibVLCSharp.Avalonia.Sample.Views
             InitializeComponent();
         }
 
-        private void OnDataContextChanged(object sender, EventArgs e)
-        {
-            if (DataContext is MainWindowViewModel vm)
-            {
-                vm.Play();
-            }
-        }
-
-        //private void InitializeComponent()
-        //{
-        //    AvaloniaXamlLoader.Load(this);
-        //}
-
         private void VisibilityButton_OnClick(object? sender, RoutedEventArgs e)
         {
             var isVisible = VisibilityButton?.IsChecked!.Value ?? false;
-            VideoView.IsVisible = isVisible;
-            ModifiedVideoView.IsVisible = isVisible;
+            VideoControl.VideoView.IsVisible = isVisible;
+            VideoControl.ModifiedVideoView.IsVisible = isVisible;
         }
 
         private void ContentButton_OnClickButton_OnClick(object? sender, RoutedEventArgs e)
         {
-            VideoView.Content = ContentButton?.IsChecked!.Value ?? false
-                ? new Border() { Background = new SolidColorBrush(Colors.Gold) }
-                : new Border() { Background = new SolidColorBrush(Colors.Plum) };
+            VideoControl.VideoView.Content = ContentButton?.IsChecked!.Value ?? false
+            ? new Border() { Background = new SolidColorBrush(Colors.Gold), Margin = new Thickness(0d, 25d) }
+            : new Border() { Background = new SolidColorBrush(Colors.Plum), Margin = new Thickness(0d, 25d) };
 
-            ModifiedVideoView.Content = ContentButton?.IsChecked!.Value ?? false
-                ? new Border() { Background = new SolidColorBrush(Colors.Green) }
-                : new Border() { Background = new SolidColorBrush(Colors.DarkOrange) };
+            VideoControl.ModifiedVideoView.Content = ContentButton?.IsChecked!.Value ?? false
+                ? new Border() { Background = new SolidColorBrush(Colors.Green), Margin = new Thickness(0d, 25d) }
+                : new Border() { Background = new SolidColorBrush(Colors.DarkOrange), Margin = new Thickness(0d, 25d) };
+
         }
 
     }
