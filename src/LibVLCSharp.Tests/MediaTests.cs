@@ -216,7 +216,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public async Task ParseShouldSucceed()
         {
             using var media = new Media(_libVLC, RealMp3Path);
@@ -225,7 +225,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public async Task ParseShouldFailIfNotMediaFile()
         {
             using var media = new Media(_libVLC, Path.GetTempFileName());
@@ -234,7 +234,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public async Task ParseShouldBeSkippedIfLocalParseSpecifiedAndRemoteUrlProvided()
         {
             using var media = new Media(_libVLC, RealStreamMediaPath, FromType.FromLocation);
