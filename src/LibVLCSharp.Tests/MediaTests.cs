@@ -183,7 +183,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public async Task CreateMultipleMediaFromStreamPlay()
         {
             var libVLC1 = new LibVLC("--no-audio", "--no-video");
@@ -210,7 +210,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public void ParseShouldThrowIfCancelledOperation()
         {
             using var media = new Media(_libVLC, RealMp3Path);
@@ -219,7 +219,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public async Task ParseShouldTimeoutWith1MillisecondLimit()
         {
             using var media = new Media(_libVLC, RealMp3Path);
