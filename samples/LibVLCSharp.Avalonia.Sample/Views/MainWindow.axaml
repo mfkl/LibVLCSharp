@@ -4,11 +4,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:v="clr-namespace:LibVLCSharp.Avalonia.Sample.Views"
 		xmlns:vlc="clr-namespace:LibVLCSharp.Avalonia;assembly=LibVLCSharp.Avalonia"
+		xmlns:viewModels="clr-namespace:LibVLCSharp.Avalonia.Sample.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="LibVLCSharp.Avalonia.Sample.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="LibVLCSharp.Avalonia.Sample">
+        Title="LibVLCSharp.Avalonia.Sample"
+		DataContextChanged="OnDataContextChanged">
 
+	<Design.DataContext>
+		<viewModels:MainWindowViewModel />
+	</Design.DataContext>
+	
     <!-- Set up so that the left splitter shifts and the right one resizes -->
     <!-- Right Border, Splitter, VideoView, Splitter, Left Border-->
     <Grid ColumnDefinitions="50, 7, 500, 7, *">
@@ -25,8 +31,9 @@
                 x:Name="ModifiedVideoView"
                 Grid.Row="0"
                 HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch">
-                <Panel Margin="0 25" Background="Orchid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                VerticalAlignment="Stretch"
+				MediaPlayer="{Binding MediaPlayer}">
+                <Panel Margin="0 25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <TextBlock>Modified VideoView Content</TextBlock>
                 </Panel>
             </vlc:VideoView>

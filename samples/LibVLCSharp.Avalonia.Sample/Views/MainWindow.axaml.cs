@@ -15,6 +15,14 @@ namespace LibVLCSharp.Avalonia.Sample.Views
             InitializeComponent();
         }
 
+        private void OnDataContextChanged(object sender, EventArgs e)
+        {
+            if (DataContext is MainWindowViewModel vm)
+            {
+                vm.Play();
+            }
+        }
+
         //private void InitializeComponent()
         //{
         //    AvaloniaXamlLoader.Load(this);
