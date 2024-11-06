@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LibVLCSharp.Avalonia.Sample": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
