@@ -210,7 +210,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public void ParseShouldThrowIfCancelledOperation()
         {
             using var media = new Media(_libVLC, RealMp3Path);
