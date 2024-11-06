@@ -36,7 +36,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-   //     [Ignore("CI")]
         public void ReleaseMedia()
         {
             var media = new Media(_libVLC, Path.GetTempFileName());
@@ -47,7 +46,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public void CreateMediaFromStream()
         {
             using var stream = new FileStream(Path.GetTempFileName(), FileMode.OpenOrCreate);
@@ -57,7 +55,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public void AddOption()
         {
             using var stream = new FileStream(Path.GetTempFileName(), FileMode.OpenOrCreate);
@@ -67,7 +64,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public async Task CreateRealMedia()
         {
             using (var media = new Media(_libVLC, RealStreamMediaPath, FromType.FromLocation))
@@ -84,7 +80,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public async Task CreateRealMediaFromUri()
         {
             using (var media = new Media(_libVLC, new Uri(RealStreamMediaPath, UriKind.Absolute)))
@@ -101,7 +96,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public void Duplicate()
         {
             using var stream = new FileStream(Path.GetTempFileName(), FileMode.OpenOrCreate);
@@ -112,7 +106,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public void CreateMediaFromFileStream()
         {
             using var stream = new FileStream(RealMp3Path, FileMode.Open, FileAccess.Read, FileShare.Read);
@@ -122,7 +115,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public void SetMetadata()
         {
             using var media = new Media(_libVLC, Path.GetTempFileName());
@@ -143,7 +135,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public async Task CreateRealMediaSpecialCharacters()
         {
             using (var media = new Media(_libVLC, RealMp3PathSpecialCharacter, FromType.FromPath))
@@ -164,7 +155,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public async Task CreateMediaFromStreamMultiplePlay()
         {
             using var mp = new MediaPlayer(_libVLC);
@@ -183,7 +173,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public async Task CreateMultipleMediaFromStreamPlay()
         {
             var libVLC1 = new LibVLC("--no-audio", "--no-video");
@@ -210,7 +199,6 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
         public void ParseShouldThrowIfCancelledOperation()
         {
             using var media = new Media(_libVLC, RealMp3Path);
