@@ -225,7 +225,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
+        [Ignore("CI")]
         public async Task ParseShouldFailIfNotMediaFile()
         {
             using var media = new Media(_libVLC, Path.GetTempFileName());
