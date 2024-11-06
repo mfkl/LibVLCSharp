@@ -122,7 +122,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public void SetMetadata()
         {
             using var media = new Media(_libVLC, Path.GetTempFileName());
@@ -143,7 +143,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public async Task CreateRealMediaSpecialCharacters()
         {
             using (var media = new Media(_libVLC, RealMp3PathSpecialCharacter, FromType.FromPath))
@@ -164,7 +164,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        [Ignore("CI")]
+        // [Ignore("CI")]
         public async Task CreateMediaFromStreamMultiplePlay()
         {
             using var mp = new MediaPlayer(_libVLC);
