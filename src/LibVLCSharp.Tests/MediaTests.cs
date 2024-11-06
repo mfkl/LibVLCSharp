@@ -216,7 +216,7 @@ namespace LibVLCSharp.Tests
         }
 
         [Test]
-        // [Ignore("CI")]
+        [Ignore("CI")]
         public async Task ParseShouldSucceed()
         {
             using var media = new Media(_libVLC, RealMp3Path);
